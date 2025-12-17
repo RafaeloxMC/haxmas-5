@@ -2,6 +2,7 @@ import flask
 import sqlite3
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from better_profanity import profanity
 
 app = flask.Flask(
     __name__,
@@ -41,6 +42,9 @@ def create_gift():
     data = flask.request.get_json()
     name = data.get('name')
     gift = data.get('gift')
+
+    if profanity.contains_profanity(name) or profanity.contains_profanity(gift):
+        return 'Inappropriate language', 400
 
     conn = sqlite3.connect('gifts.db')
     cursor = conn.cursor()
