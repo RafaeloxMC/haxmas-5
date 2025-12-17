@@ -1,0 +1,28 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
+
+@font-face {
+	font-family: "Christmas";
+	src: url("./font.woff2");
+}
+
+h1 {
+	font-family: "Christmas";
+}
+
+#giftForm {
+	justify-items: center;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1%;
+	text-align: end;
+}
