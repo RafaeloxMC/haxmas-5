@@ -25,13 +25,18 @@ form.addEventListener("submit", async (event) => {
 	const name = form.elements.name.value;
 	const gift = form.elements.gift.value;
 
-	await fetch("/gifts", {
+	const res = await fetch("/gifts", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({ name, gift }),
 	});
+
+	if (res.status != 201)
+		document.getElementById("error").innerHTML =
+			"<div>" + (await res.text());
+	+"</div>";
 
 	form.reset();
 	await loadGifts();
