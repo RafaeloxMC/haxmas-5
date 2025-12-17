@@ -26,3 +26,10 @@ h1 {
 	gap: 1%;
 	text-align: end;
 }
+
+.giftItem {
+	padding: 1vw;
+	margin: 2vw;
+	border-radius: 25px;
+	background-color: #00000053;
+}
