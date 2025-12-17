@@ -33,3 +33,13 @@ h1 {
 	border-radius: 25px;
 	background-color: #00000053;
 }
+
+#footer {
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	margin-top: auto;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
